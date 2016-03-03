@@ -1,0 +1,9 @@
+Changelog -
+
+Version 0.1
+	- Initial project creation
+	- Basic forms created, links between pages set
+	- Tested basic functionality with Chrome and IE10.
+	
+	TO DO LIST:
+		 - Create functions for repetitive tasks
