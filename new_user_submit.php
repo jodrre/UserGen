@@ -1,15 +1,18 @@
 <?php
 include 'includes/conf.php';
-include 'includes/user_creation.class.php';
+require 'includes/user_creation.class.php';
+
+include 'includes/header.php';
 
 TheFinalInsertion();
 
-
-include 'includes/header.php';
 ?>
-TEMP HOLD
+Your new user request has been submitted!
+<p />
+Please allow 2 business days for completion, you will be notified when complete.
 
 
 <?php 
+
 include 'includes/footer.php';
 ?>

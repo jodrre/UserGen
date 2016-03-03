@@ -11,11 +11,11 @@ $dropJobTitle = $_POST['dropJobTitle'];
 $txtExtension = $_POST['txtExtension'];
 $txtAssociateID = $_POST['txtAssociateID'];
 $App = $_POST['App'];
-$App_array = $_POST['App'];
+$App_array = implode('|',$_POST['App']);
 $Distro = $_POST['Distro'];
-$Distro_array = $_POST['Distro'];
+$Distro_array = implode('|',$_POST['Distro']);
 $Drive = $_POST['Drive'];
-$Drive_array =  $_POST['Drive'];
+$Drive_array =  implode('|',$_POST['Drive']);
 require_once 'includes/header.php';
 
 ?>

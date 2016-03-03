@@ -4,7 +4,7 @@ require_once 'includes/conf.php';
 <html>
 <head>
 <title>User Access Site - SRR IT Dept</title>
-<link rel='stylesheet' type='text/css' <?php echo 'href='.$site_theme_front;?>>
+<!-- <link rel='stylesheet' type='text/css' <?php echo 'href='.$site_theme_front;?>> -->
 </head>
 <body>
 		<div id=wrapper>
