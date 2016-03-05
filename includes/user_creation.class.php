@@ -179,37 +179,28 @@ function TheFinalInsertion(){
 
 	// Applications are next
 	$App_array = explode('|', $App);
-
-			$app_num_SQL = 'SELECT app_id FROM applications WHERE app_short_name = "'.$app_a.'";';
-			$app_b = $mysqli->query($app_num_SQL);
-			$app_b = mysqli_fetch_all($app_b);
-			foreach ($App as $item) {
-				$app_ins_sql = 'INSERT INTO users_apps (user_id, app_id) VALUES ("'.$lastID.'", "'.$item[0].'");';
-				$mysqli->query($app_ins_sql);
+			foreach ($App_array as $app_item) {
+					$app_lookupSQL = "SELECT app_id FROM applications WHERE app_short_name = '".$app_item."';";
+					$app_l = $mysqli->query($app_lookupSQL);
+					$app_l = mysqli_fetch_all($app_l);
+					$app_b = $app_l[0];
+					$app_a = $app_b[0];
+					$app_ins_sql = 'INSERT INTO users_apps (user_id, app_id) VALUES ("'.$lastID.'", "'.$app_a.'");';
+					$mysqli->query($app_ins_sql);
 			}		
-	var_dump($App);
-	echo "<br />";
-	var_dump($App_array);
-	echo "<P />";
+			
 	// Email distros are third
 	$Distro_array = explode('|', $Distro);
 		foreach ($Distro_array as $distro_a) {
 			$distro_ins_sql = 'INSERT INTO users_distros (user_id, distro_id) VALUES ("'.$lastID.'", "'.$distro_a.'");';
 			$mysqli->query($distro_ins_sql);
 		}
-		var_dump($Distro);
-		echo "<br />";
-	var_dump($Distro_array);
-	echo "<p />";
+		
 	// Drives are last but not least
 	$Drive_array = explode('|', $Drive);
 		foreach ($Drive_array as $drives_a) {
 			$drives_ins_sql = 'INSERT INTO users_drives (user_id, drive_id) VALUES ("'.$lastID.'", "'.$drives_a.'");';
 			$mysqli->query($drives_ins_sql);
 		}
-		var_dump($Drive);
-		echo "<br />";
-var_dump($Drive_array);
-echo "<p />";
 }
 	
