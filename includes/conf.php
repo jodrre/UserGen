@@ -13,6 +13,7 @@ $mail_username = "";  // SMTP username
 $mail_password = ""; // SMTP password
 $mail_from = "jodrre@gmail.com"; // Default email address
 $mail_fromName = "Joe TEST"; // Name of default user
+$mail_ITDepartment_email = "SunriverIT@destinationhotels.com";
 
 // Enter the path to the CSS template file for the front-end
 $site_theme_front = 'templates/main/main.css';
