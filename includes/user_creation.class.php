@@ -202,5 +202,7 @@ function TheFinalInsertion(){
 			$drives_ins_sql = 'INSERT INTO users_drives (user_id, drive_id) VALUES ("'.$lastID.'", "'.$drives_a.'");';
 			$mysqli->query($drives_ins_sql);
 		}
+	include 'user_notification.class.php';
+	EmailIt($lastID, 1);
 }
 	
