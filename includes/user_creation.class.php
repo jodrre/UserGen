@@ -17,7 +17,8 @@ function GetAssignedAppsTable($job){
 	// Returns a bunch of checkboxes
 
 	global $mysqli;
-	
+	If ($job !== 'OTHER') {
+		
 	$SQL_assigned = "SELECT * FROM job_app_assignments INNER JOIN applications ON job_app_assignments.assignment_app = applications.app_short_name WHERE applications.app_active = 1 AND job_app_assignments.assignment_job_id = ".$job." ORDER BY app_group_number, app_name;";
 	$outp_assigned = mysqli_query($mysqli,$SQL_assigned);
 	
@@ -33,8 +34,14 @@ function GetAssignedAppsTable($job){
 		echo "<br>
 				";	
 	}
+	}
+	$SQL_allapps = "SELECT * FROM applications WHERE app_active = 1 ORDER BY app_group_number, app_name;";
+	$outp_assigned = mysqli_query($mysqli, $SQL_allapps);
+	while($row=mysqli_fetch_array($outp_assigned)){
+		echo "<input type=checkbox name='App[]' value='".$row['app_short_name']."'>".$row['app_name']."<br>";
+	}
 }
-
+	
 function GetAssignedEmailDistros($job) {
 	
 	global $mysqli;
@@ -161,18 +168,22 @@ function TheFinalInsertion(){
 	$txtFName = $_POST['txtFName'];
 	$txtLName = $_POST['txtLName'];
 	$dropDept = $_POST['dropDept'];
-	$deptName = $_POST['deptName'];
 	$dateStart = $_POST['dateStart'];
 	$dropJobTitle = $_POST['dropJobTitle'];
+	$txtJob = $_POST['txtJob'];
 	$txtExtension = $_POST['txtExtension'];
 	$txtAssociateID = $_POST['txtAssociateID'];
 	$App = $_POST['App'];
 	$Distro = $_POST['Distro'];
 	$Drive = $_POST['Drive'];
 
+	
+	If ($dropJobTitle == 'OTHER') {
+		$dropJobTitle = 0;
+	}
 	// Create the user record first!
-		$insert_userSQL = 'INSERT INTO users (user_LName, user_FName, user_dept, user_job, user_badge, user_extension, user_startdate) 
-			VALUES ("'.$txtFName.'", "'.$txtLName.'", "'.$dropDept.'", "'.$dropJobTitle.'", "'.$txtAssociateID.'", "'.$txtExtension.'", "'.$dateStart.'");';
+		$insert_userSQL = 'INSERT INTO users (user_LName, user_FName, user_dept, user_job, user_badge, user_extension, user_startdate, user_text_title) 
+			VALUES ("'.$txtFName.'", "'.$txtLName.'", "'.$dropDept.'", "'.$dropJobTitle.'", "'.$txtAssociateID.'", "'.$txtExtension.'", "'.$dateStart.'", "'.$txtJob.'");';
 		mysqli_query($mysqli, $insert_userSQL);
 	// This gives us the row number for the newly created user!
 		$lastID = $mysqli->insert_id;

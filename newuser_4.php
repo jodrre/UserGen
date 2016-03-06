@@ -8,6 +8,7 @@ $dropDept = $_POST['dropDept'];
 $deptName = $_POST['deptName'];
 $dateStart = $_POST['dateStart'];
 $dropJobTitle = $_POST['dropJobTitle'];
+$txtJob = $_POST['txtJob'];
 $txtExtension = $_POST['txtExtension'];
 $txtAssociateID = $_POST['txtAssociateID'];
 $App = $_POST['App'];
@@ -29,6 +30,7 @@ require_once 'includes/header.php';
 <input type=hidden value="<?php echo $txtExtension;?>" name="txtExtension">
 <input type=hidden value="<?php echo $txtAssociateID;?>" name="txtAssociateID">
 <input type=hidden value="<?php echo $dropJobTitle;?>" name="dropJobTitle">
+<input type=hidden value="<?php echo $txtJob;?>" name="txtJob">
 <input type=hidden value="<?php echo $App_array;?>" name="App">
 <input type=hidden value="<?php echo $Distro_array;?>" name="Distro">
 <input type=hidden value="<?php echo $Drive_array;?>" name="Drive">
@@ -37,7 +39,7 @@ Please confirm the information below is listed correctly before submitting.<p>
 <h3>User Information:</h3>
 <?php 
 echo "<b>Name:</b> ".$txtFName." ".$txtLName."<br />";
-echo "<b>Title:</b> ".WhatsTheTitle($dropJobTitle)."<br />";
+echo "<b>Title:</b> ".$txtJob."<br />";
 echo "<b>Start date:</b> ".$dateStart."<br />";
 echo "<b>Extension:</b> ".$txtExtension."<br />";
 echo "<b>Associate ID:</b> ".$txtAssociateID."<br />";

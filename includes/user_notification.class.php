@@ -5,9 +5,10 @@ function EmailIt($user_id, $notification_type) {
 			2 = Access change
 			3 = Termination
 	*/
-	require('class.phpmailer.php');
-	require('class.smtp.php');
-	require('conf.php');
+	include('class.phpmailer.php');
+	include('class.smtp.php');
+	include('conf.php');
+	$mail = new PHPMailer();
 	$mail->IsSMTP();                                      // set mailer to use SMTP
 	$mail->Host = $mail_host;  // specify main and backup server
 	$mail->Port = $mail_port;
@@ -31,9 +32,9 @@ function EmailIt($user_id, $notification_type) {
 	
 	if(!$mail->Send())
 	{
-		echo $mail_errorreport;
+		echo "Something went wrong. Send IT the following error information:<br>";
+		echo $mail->ErrorInfo;
 		exit;
 	}
-	
 	echo "Message has been sent";
 }
