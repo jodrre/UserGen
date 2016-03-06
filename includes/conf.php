@@ -28,4 +28,4 @@ $site_owner = 'SRR IT Department';
 
 
 $mysqli = new mysqli($dbhost,$dbuser,$dbpass,$db);
-$UGver = '0.1.2';
+$UGver = '0.1.3 (beta)';
