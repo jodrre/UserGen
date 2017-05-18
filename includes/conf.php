@@ -1,8 +1,8 @@
 <?php
 
-$dbhost = '192.168.0.2'; // Database server FQDN, IP address, or localhost (default localhost)
-$dbuser = 'root'; // User with read/write permissions to the database
-$dbpass = '$kunk@P3'; // Password
+$dbhost = '192.168.0.13'; // Database server FQDN, IP address, or localhost (default localhost)
+$dbuser = 'usergen'; // User with read/write permissions to the database
+$dbpass = 'Password123'; // Password
 $db = 'test'; // Database for UserGenerator
 
 
@@ -11,14 +11,14 @@ $mail_port = '2525'; // SMTP port
 $mail_auth = false;     // turn on SMTP authentication
 $mail_username = "";  // SMTP username
 $mail_password = ""; // SMTP password
-$mail_from = "jodrre@gmail.com"; // Default email address
-$mail_fromName = "Joe TEST"; // Name of default user
-$mail_ITDepartment_email = "SunriverIT@destinationhotels.com";
+$mail_from = "usergen@company.com"; // Default email address
+$mail_fromName = "UserGen TEST"; // Name of default user
+$mail_ITDepartment_email = "it_department@company.com";
 
 // Enter the path to the CSS template file for the front-end
 $site_theme_front = 'templates/main/main.css';
-// Enter the path to the cSS template file for the back-end
-$site_theme_back = 'templates/main/main.css';
+// Enter the path to the CSS template file for the back-end
+$site_theme_back = '../templates/main/main.css';
 
 $site_owner = 'SRR IT Department';
 

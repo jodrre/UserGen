@@ -1,6 +1,6 @@
 <?php
 require_once '../includes/conf.php';
-require_once '../includes/header.php';
+require_once '../includes/header_back.php';
 
 IF (isset($_POST['updateUser'])) {
 	$sqlUpdate = "UPDATE users SET 
@@ -40,3 +40,4 @@ $getUsers = $mysqli->query($getUsers_SQL);
 	<td><a href=user_edit.php?id=".$uid.">Edit</a></td>
   </tr>"; }?>
 </table> 
+<a href=back.php><button>Go Back</button></a>

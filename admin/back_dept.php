@@ -6,12 +6,14 @@ require_once '../includes/header.php';
 // Need to fix this.
 
 IF (isset($_POST['btnNew'])) {
-	$newDeptNum = $_POST['txtDeptNum'];
+	$newDeptNum = (int)$_POST['txtDeptNum'];
 	$newDeptName = $_POST['txtDeptName'];
-	$sqlUpdate = 'INSERT INTO departments VALUES ('.$newDeptNum.',."'.$newDeptName.'");';
+	var_dump($_POST['txtDeptNum']);
+	var_dump($_POST['txtDeptName']);
+	$sqlUpdate = 'INSERT INTO departments (department_id, department_name) VALUES ('.$newDeptNum.', "'.$newDeptName.'");';
 	mysqli_query($mysqli, $sqlUpdate);
+	var_dump($sqlUpdate);
 }
-
 
 $SQL_alldepts = "SELECT * FROM departments ORDER BY department_id;";
 $outp_alldepts = mysqli_query($mysqli,$SQL_alldepts);

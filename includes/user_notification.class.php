@@ -56,9 +56,9 @@ function EmailIt($user_id, $notification_type) {
 	
 	if(!$mail->Send())
 	{
-		echo "Something went wrong. Send IT the following error information:<br>";
+		echo "Something went wrong. The request has been received but an email has not been sent. Send IT the following error information:<br>";
 		echo $mail->ErrorInfo;
 		exit;
 	}
-	echo "Message has been sent";
+	echo "Message has been sent<br>";
 }

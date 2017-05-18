@@ -183,7 +183,7 @@ function TheFinalInsertion(){
 	}
 	// Create the user record first!
 		$insert_userSQL = 'INSERT INTO users (user_LName, user_FName, user_dept, user_job, user_badge, user_extension, user_startdate, user_text_title) 
-			VALUES ("'.$txtFName.'", "'.$txtLName.'", "'.$dropDept.'", "'.$dropJobTitle.'", "'.$txtAssociateID.'", "'.$txtExtension.'", "'.$dateStart.'", "'.$txtJob.'");';
+			VALUES ("'.$txtLName.'", "'.$txtFName.'", "'.$dropDept.'", "'.$dropJobTitle.'", "'.$txtAssociateID.'", "'.$txtExtension.'", "'.$dateStart.'", "'.$txtJob.'");';
 		mysqli_query($mysqli, $insert_userSQL);
 	// This gives us the row number for the newly created user!
 		$lastID = $mysqli->insert_id;

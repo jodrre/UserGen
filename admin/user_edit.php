@@ -24,3 +24,4 @@ Use this page to edit details about the user.<p />
 <input type="submit" value='Update' name='btnUpdate'>
 <input type="hidden" value=1 name='updateUser'>
 </form>
+<a href=back.php><button>Go Back</button></a>

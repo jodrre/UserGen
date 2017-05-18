@@ -14,7 +14,7 @@ $outp = mysqli_fetch_array($outp);
 <input type='text' name='jobUpdateName' value='<?php echo $outp[1];?>'>
 <input type="submit" value='Update' name='btnUpdate'>
 </form>
-
+<a href=back.php><button>Go Back</button></a>
 <?php 
 require_once '../includes/footer.php';
 ?>

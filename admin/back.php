@@ -18,7 +18,7 @@ $outp = mysqli_query($mysqli, $sql);
 <p />
 <b>User Management</b><br />
 <a href='back_users.php'>Show all users</a><br />
-<a href='users_incomplete.php'>Users to complete</a>
+<a href='user_incomplete.php'>Users to complete</a>
 
 <?php 
 require_once '../includes/footer.php';

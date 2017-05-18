@@ -18,7 +18,7 @@ $sql_deptname = 'SELECT * FROM departments WHERE department_id='.$_POST['dropDep
 $outp_deptname = mysqli_query($mysqli, $sql_deptname);
 $deptname = mysqli_fetch_array($outp_deptname);
 $deptname = $deptname['department_name'];
-$getJobsInDept = 'SELECT * FROM job_titles WHERE job_dept='.$_POST['dropDept'].';';
+$getJobsInDept = 'SELECT * FROM job_titles WHERE job_dept='.$_POST['dropDept'].' ORDER BY job_title_name;';
 $result = mysqli_query($mysqli,$getJobsInDept);
 $jobDept = $_POST['dropDept'];
 
